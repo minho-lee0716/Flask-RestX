@@ -14,6 +14,15 @@
 from flask import Flask
 
 app = Flask(__name__)
+
+#if not app.debug:
+#    import logging
+#    from logging.handlers import RotatingFileHandler # handler는 여러개의 종류가 있다.
+#    file_handler = RotatingFileHandler('test_log.log', maxBytes=2000, backupCount=10)
+#    file_handler.setLevel(logging.WARNING) # 어느 단계까지 로깅을 허용할 것인지.
+#    # app.logger.addHandler()에 등록을 해주어야 app.logger로 사용이 가능하다.
+#    app.logger.addHandler(file_handler)
+
 @app.route("/<user_name>")
 def hello(user_name):
     return "<h1>Hello " + user_name + "</h1>"
